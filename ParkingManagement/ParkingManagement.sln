@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.WebClient", "ParkingManagement.WebClient\ParkingManagement.WebClient.csproj", "{185EF61D-5803-4798-A317-8B46A1E08ADF}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{185EF61D-5803-4798-A317-8B46A1E08ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185EF61D-5803-4798-A317-8B46A1E08ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185EF61D-5803-4798-A317-8B46A1E08ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185EF61D-5803-4798-A317-8B46A1E08ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
