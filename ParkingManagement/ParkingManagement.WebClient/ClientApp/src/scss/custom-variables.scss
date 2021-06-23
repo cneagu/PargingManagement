@@ -1,0 +1,27 @@
+/*$color-primary: #db0962;
+$color-accent: #650938;
+$color-secondary: #616566;
+
+$color-success: #00C851;
+$color-error: #ff4444;*/
+
+@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
+@include mat.core();
+
+$table-max-width: 500px;
+$margin-xxs: 2px;
+$margin-xs: 4px;
+$margin-sm: 8px;
+$margin-md: 12px;
+$margin-lg: 16px;
+$margin-xl: 20px;
+$margin-xxl: 24px;
+$margin-xxxl: 32px;
+$margin-xxxxl: 48px;
+
+.icon-xl {
+  width: 48px;
+  height: 48px;
+  font-size: 48px;
+}

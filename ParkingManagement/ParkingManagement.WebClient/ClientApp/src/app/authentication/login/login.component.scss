@@ -1,2 +1,26 @@
-﻿body {
+@import '../../../scss/custom-variables.scss';
+
+:host {
+  width: 100%;
+  max-width: 250px;
+  /*background: linear-gradient(85deg, #61c7ef, #4833fb);*/
+  padding: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
+  border-radius: 16px;
+
+  .header {
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  form {
+    mat-form-field {
+      width: 100%;
+    }
+
+    .note {
+      text-align: center;
+      padding: 1.25em 0;
+    }
+  }
 }

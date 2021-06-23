@@ -1,2 +1,39 @@
-﻿body {
+:host {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  .image {
+    background-image: url('../../assets/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 50%;
+    left: 0;
+  }
+
+  .forms {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
+
+@media screen and (max-width: 600px) {
+  
+
+    .image {
+      width: 100%;
+    }
+
+    .forms {
+      width: 100%;
+    }
+  
+  }

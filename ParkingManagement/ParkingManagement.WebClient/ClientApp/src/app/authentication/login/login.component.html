@@ -1,1 +1,32 @@
-<h1>Hello!</h1>
+<h2 class="header">{{ 'login' | translate }}</h2>
+<form #form="ngForm" (submit)="login()">
+  <mat-form-field>
+    <input matInput
+           placeholder="Email"
+           type="email"
+           name="email"
+           [(ngModel)]="email"
+           #emailControl="ngModel"
+           email
+           required>
+    <mat-error *ngIf="emailControl.invalid">{{ 'invalidEmail' | translate }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Password"
+           type="password"
+           name="password"
+           [(ngModel)]="password"
+           #passwordControl="ngModel"
+           required>
+    <mat-error *ngIf="passwordControl.invalid">{{ 'requiredField' | translate }}</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">{{ 'login' | translate }}</button>
+  <div class="note">
+    {{ 'loginNote' | translate }} <a [routerLink]="['/authentication/register']">{{ 'register' | translate }}</a>
+  </div>
+  <div class="note">
+    <a [routerLink]="['/authentication/forgotPassword']">{{ 'forgotPassword' | translate }}</a>
+  </div>
+</form>
+
