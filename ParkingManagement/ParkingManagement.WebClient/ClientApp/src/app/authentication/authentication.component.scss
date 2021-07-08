@@ -26,14 +26,16 @@
 
 
 @media screen and (max-width: 600px) {
-  
-
+    :host{
+        display:inline-block;
     .image {
       width: 100%;
+      position:relative;
     }
 
-    .forms {
-      width: 100%;
+  .forms {
+    width: 100%;
+    position: relative;
+  }
     }
-  
   }
