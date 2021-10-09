@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.WebClient", "ParkingManagement.WebClient\ParkingManagement.WebClient.csproj", "{E4DC3F5B-DA7D-428C-962E-F7EED1455595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.WebClient", "ParkingManagement.WebClient\ParkingManagement.WebClient.csproj", "{E4DC3F5B-DA7D-428C-962E-F7EED1455595}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.WebClient.Api", "ParkingManagement.WebClient.Api\ParkingManagement.WebClient.Api.csproj", "{3EF2698D-8739-4420-869E-112E30836528}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E4DC3F5B-DA7D-428C-962E-F7EED1455595}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4DC3F5B-DA7D-428C-962E-F7EED1455595}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4DC3F5B-DA7D-428C-962E-F7EED1455595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF2698D-8739-4420-869E-112E30836528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF2698D-8739-4420-869E-112E30836528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF2698D-8739-4420-869E-112E30836528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF2698D-8739-4420-869E-112E30836528}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

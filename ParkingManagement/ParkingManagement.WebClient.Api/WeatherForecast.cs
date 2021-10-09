@@ -1,6 +1,6 @@
 using System;
 
-namespace ParkingManagement.WebClient
+namespace ParkingManagement.WebClient.Api
 {
     public class WeatherForecast
     {

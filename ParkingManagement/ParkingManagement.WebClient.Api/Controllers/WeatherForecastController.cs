@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ParkingManagement.WebClient.Controllers
+namespace ParkingManagement.WebClient.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

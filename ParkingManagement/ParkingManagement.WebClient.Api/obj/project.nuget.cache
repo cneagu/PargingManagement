@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "fQ5mp8oUaNmUJ7MU4FECXhUCb6IYMh9FOVeyzqEQ4P3vX645/pWdhz8IBn0DxQ7mHHQyfNIphKCT0RK1TcEuwA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\ParkingManagement\\ParkingManagement.WebClient.Api\\ParkingManagement.WebClient.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\CNeagu\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\CNeagu\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\CNeagu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\CNeagu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
