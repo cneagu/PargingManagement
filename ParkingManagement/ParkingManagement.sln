@@ -5,7 +5,19 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.WebClient", "ParkingManagement.WebClient\ParkingManagement.WebClient.csproj", "{E4DC3F5B-DA7D-428C-962E-F7EED1455595}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.WebClient.Api", "ParkingManagement.WebClient.Api\ParkingManagement.WebClient.Api.csproj", "{3EF2698D-8739-4420-869E-112E30836528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.WebClient.Api", "ParkingManagement.WebClient.Api\ParkingManagement.WebClient.Api.csproj", "{3EF2698D-8739-4420-869E-112E30836528}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ParkingManagement.Client", "ParkingManagement.Client", "{9E0BD083-7606-4EAF-9DF0-A21C32650430}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security Subsistem", "Security Subsistem", "{5EC20018-1CEC-454A-A668-9CC4C2439B68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.Security", "ParkingManagement.Security\ParkingManagement.Security.csproj", "{A7CC955A-4616-423B-A1D7-8C11A1916405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.Security.Contract", "..\ParkingManagement.Security.Contract\ParkingManagement.Security.Contract.csproj", "{A624CD07-3857-4C6E-9267-A22F2F04AB50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7961A0C3-4563-4ABF-91D2-C2F6E67183F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.Infrastructure", "..\ParkingManagement.Infrastructure\ParkingManagement.Infrastructure.csproj", "{09D017DC-A1E8-4321-89EC-95365FED8B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +33,28 @@ Global
 		{3EF2698D-8739-4420-869E-112E30836528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF2698D-8739-4420-869E-112E30836528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF2698D-8739-4420-869E-112E30836528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CC955A-4616-423B-A1D7-8C11A1916405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CC955A-4616-423B-A1D7-8C11A1916405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CC955A-4616-423B-A1D7-8C11A1916405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CC955A-4616-423B-A1D7-8C11A1916405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A624CD07-3857-4C6E-9267-A22F2F04AB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A624CD07-3857-4C6E-9267-A22F2F04AB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A624CD07-3857-4C6E-9267-A22F2F04AB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A624CD07-3857-4C6E-9267-A22F2F04AB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D017DC-A1E8-4321-89EC-95365FED8B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D017DC-A1E8-4321-89EC-95365FED8B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D017DC-A1E8-4321-89EC-95365FED8B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D017DC-A1E8-4321-89EC-95365FED8B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4DC3F5B-DA7D-428C-962E-F7EED1455595} = {9E0BD083-7606-4EAF-9DF0-A21C32650430}
+		{3EF2698D-8739-4420-869E-112E30836528} = {9E0BD083-7606-4EAF-9DF0-A21C32650430}
+		{A7CC955A-4616-423B-A1D7-8C11A1916405} = {5EC20018-1CEC-454A-A668-9CC4C2439B68}
+		{A624CD07-3857-4C6E-9267-A22F2F04AB50} = {5EC20018-1CEC-454A-A668-9CC4C2439B68}
+		{09D017DC-A1E8-4321-89EC-95365FED8B2F} = {7961A0C3-4563-4ABF-91D2-C2F6E67183F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95B786DE-82EF-481E-8123-C17106DCBE9B}

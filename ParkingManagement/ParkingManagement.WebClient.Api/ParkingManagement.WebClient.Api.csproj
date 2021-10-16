@@ -10,4 +10,9 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.13.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\ParkingManagement.Infrastructure\ParkingManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\ParkingManagement.Security\ParkingManagement.Security.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,9 +1,18 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using ParkingManagement.Infrastructure;
+using ParkingManagement.Security.Contract.Employee;
+using ParkingManagement.Security.Manager.Employee;
+using ParkingManagement.Security.Resource.Employee;
+using ParkingManagement.Security.Resource.Employee.Contract;
+using System;
+using System.Text;
 
 namespace ParkingManagement.WebClient.Api
 {
@@ -19,6 +28,36 @@ namespace ParkingManagement.WebClient.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Framework.IConfig config = new Framework.Config();
+            Configuration.GetSection("ApiConfig").Bind(config);
+            services.AddSingleton<Framework.IConfig>(x => (Framework.Config)config);
+
+            Security.Config config1 = new();
+            Configuration.GetSection("DBConnections").Bind(config1);
+            services.AddSingleton<IEmployeeSecurityManager>(x => new EmployeeSecurityManager(
+                new EmployeeResource(config1),
+                new EncryptionUtility()
+                ));
+
+            //services.AddSingleton<IEmployeeResource, EmployeeResource>();
+            //services.AddSingleton<IEncryptionUtility, EncryptionUtility>();
+
+        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateLifetime = true,
+                        ValidateIssuer = true,
+                        ValidIssuer = "Parking.Authentication.Bearer",
+                        ValidateAudience = true,
+                        ValidAudience = "Parking.Authentication.Bearer",
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(config.AccessTokenKey)),
+                        ClockSkew = TimeSpan.FromMinutes(0)
+
+                    };
+                });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

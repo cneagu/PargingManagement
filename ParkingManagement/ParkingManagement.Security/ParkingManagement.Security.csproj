@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ParkingManagement.Infrastructure\ParkingManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\ParkingManagement.Security.Contract\ParkingManagement.Security.Contract.csproj" />
+  </ItemGroup>
+
+</Project>
