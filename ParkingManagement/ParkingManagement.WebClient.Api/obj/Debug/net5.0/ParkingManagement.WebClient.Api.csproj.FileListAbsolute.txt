@@ -59,3 +59,4 @@ C:\Users\CNeagu\source\repos\PargingManagement\ParkingManagement\ParkingManageme
 C:\Users\CNeagu\source\repos\PargingManagement\ParkingManagement\ParkingManagement.WebClient.Api\bin\Debug\net5.0\ParkingManagement.Security.pdb
 C:\Users\CNeagu\source\repos\PargingManagement\ParkingManagement\ParkingManagement.WebClient.Api\bin\Debug\net5.0\ParkingManagement.Security.Contract.pdb
 C:\Users\CNeagu\source\repos\PargingManagement\ParkingManagement\ParkingManagement.WebClient.Api\obj\Debug\net5.0\ParkingManagement.WebClient.Api.csprojAssemblyReference.cache
+C:\Users\CNeagu\source\repos\PargingManagement\ParkingManagement\ParkingManagement.WebClient.Api\bin\Debug\net5.0\DeepCopy.dll

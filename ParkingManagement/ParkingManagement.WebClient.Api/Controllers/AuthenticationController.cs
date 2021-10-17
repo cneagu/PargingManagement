@@ -45,7 +45,7 @@ namespace ParkingManagement.WebClient.Api.Controllers
         {
             Models.Authentication.LoginReturn loginReturn = await Task.Run(() =>
             {
-                return employeeSecurityManager.Login(loginModel.Email, loginModel.Password).DeepCopyTo<Models.Authentication.LoginReturn>();
+                return employeeSecurityManager.Login(loginModel.Email, loginModel.Password).DeepCopy<Models.Authentication.LoginReturn>();
             });
 
             return GetLoginResult(loginReturn);
