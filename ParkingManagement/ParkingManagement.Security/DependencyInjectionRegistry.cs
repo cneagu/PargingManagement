@@ -10,10 +10,10 @@ namespace ParkingManagement.Security
 {
     public static class DependencyInjectionRegistry
     {
-        public static IServiceCollection AddSecurityServices(this IServiceCollection services, IConfiguration Configuration)
+        public static IServiceCollection AddSecurityServices(this IServiceCollection services, IConfiguration configuration)
         {
             Config config1 = new();
-            Configuration.GetSection("DBConnections").Bind(config1);
+            configuration.GetSection("DBConnections").Bind(config1);
 
             return services.AddSingleton<IEmployeeSecurityManager, EmployeeSecurityManager>()
                     .AddSingleton<IEmployeeResource>(x => new EmployeeResource(config1))
