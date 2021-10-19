@@ -4,7 +4,7 @@ using ParkingManagement.Infrastructure;
 using ParkingManagement.Security.Contract.Employee;
 using ParkingManagement.Security.Manager.Employee;
 using ParkingManagement.Security.Resource.Employee;
-using System.Configuration;
+using ParkingManagement.Security.Resource.Employee.Contract;
 
 namespace ParkingManagement.Security
 {
@@ -12,14 +12,12 @@ namespace ParkingManagement.Security
     {
         public static IServiceCollection AddSecurityServices(this IServiceCollection services, IConfiguration Configuration)
         {
-            Security.Config config1 = new();
+            Config config1 = new();
             Configuration.GetSection("DBConnections").Bind(config1);
-            services.AddSingleton<IEmployeeSecurityManager>(x => new EmployeeSecurityManager(
-                new EmployeeResource(config1),
-                new EncryptionUtility()
-                ));
 
-            return services;
+            return services.AddSingleton<IEmployeeSecurityManager, EmployeeSecurityManager>()
+                    .AddSingleton<IEmployeeResource>(x => new EmployeeResource(config1))
+                    .AddSingleton<IEncryptionUtility, EncryptionUtility>();
         }
     }
 }
