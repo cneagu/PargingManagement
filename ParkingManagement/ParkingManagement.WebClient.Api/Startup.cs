@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ParkingManagement.Infrastructure;
+using ParkingManagement.Security;
 using ParkingManagement.Security.Contract.Employee;
 using ParkingManagement.Security.Manager.Employee;
 using ParkingManagement.Security.Resource.Employee;
@@ -32,17 +33,9 @@ namespace ParkingManagement.WebClient.Api
             Configuration.GetSection("ApiConfig").Bind(config);
             services.AddSingleton<Framework.IConfig>(x => (Framework.Config)config);
 
-            Security.Config config1 = new();
-            Configuration.GetSection("DBConnections").Bind(config1);
-            services.AddSingleton<IEmployeeSecurityManager>(x => new EmployeeSecurityManager(
-                new EmployeeResource(config1),
-                new EncryptionUtility()
-                ));
+            services.AddSecurityServices(Configuration);
 
-            //services.AddSingleton<IEmployeeResource, EmployeeResource>();
-            //services.AddSingleton<IEncryptionUtility, EncryptionUtility>();
-
-        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
