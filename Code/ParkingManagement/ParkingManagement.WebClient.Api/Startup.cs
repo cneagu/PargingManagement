@@ -71,6 +71,7 @@ namespace ParkingManagement.WebClient.Api
 
             app.UseRouting();
 
+
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
@@ -78,7 +79,9 @@ namespace ParkingManagement.WebClient.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
             });
         }
     }

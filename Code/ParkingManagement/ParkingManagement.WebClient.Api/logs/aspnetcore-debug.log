@@ -1,0 +1,130 @@
+[aspnetcorev2.dll] Initializing logs for 'C:\Program Files\IIS\Asp.Net Core Module\V2\aspnetcorev2.dll'. Process Id: 37740.. File Version: 15.0.21270.11. Description: IIS ASP.NET Core Module V2. Commit: 2924ca229b3d6c91b7c9eded119b31dfd7aa1fef.
+[aspnetcorev2.dll] Resolving hostfxr parameters for application: 'dotnet' arguments: '.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll' path: 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\'
+[aspnetcorev2.dll] Known dotnet.exe location: ''
+[aspnetcorev2.dll] Process path 'dotnet.exe' is dotnet, treating application as portable
+[aspnetcorev2.dll] Resolving absolute path to dotnet.exe from 'dotnet.exe'
+[aspnetcorev2.dll] Invoking where.exe to find dotnet.exe
+[aspnetcorev2.dll] where.exe invocation returned: 'C:\Program Files\dotnet\dotnet.exe
+C:\Program Files (x86)\dotnet\dotnet.exe
+'
+[aspnetcorev2.dll] Current process bitness type detected as isX64=1
+[aspnetcorev2.dll] Processing entry 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2.dll] Binary type 6
+[aspnetcorev2.dll] Found dotnet.exe via where.exe invocation at 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2.dll] Resolving absolute path to hostfxr.dll from 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2.dll] hostfxr.dll located at 'C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll'
+[aspnetcorev2.dll] Converted argument '.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll' to 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll'
+[aspnetcorev2.dll] Parsed hostfxr options: dotnet location: 'C:\Program Files\dotnet\dotnet.exe' hostfxr path: 'C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll' arguments:
+[aspnetcorev2.dll] Argument[0] = 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2.dll] Argument[1] = 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll'
+[aspnetcorev2.dll] Loading hostfxr from location C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll
+[aspnetcorev2.dll] Canceling standard stream pipe reader
+[aspnetcorev2.dll] Loading request handler:  'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.11\aspnetcorev2_inprocess.dll'
+[aspnetcorev2.dll] Creating handler application
+[aspnetcorev2_inprocess.dll] Initializing logs for 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.11\aspnetcorev2_inprocess.dll'. Process Id: 37740.. File Version: 15.0.21270.11. Description: IIS ASP.NET Core Module V2 Request Handler. Commit: 2924ca229b3d6c91b7c9eded119b31dfd7aa1fef.
+[aspnetcorev2_inprocess.dll] Waiting for initialization
+[aspnetcorev2_inprocess.dll] Starting in-process worker thread
+[aspnetcorev2_inprocess.dll] Resolving hostfxr parameters for application: 'dotnet' arguments: '.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll' path: 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\'
+[aspnetcorev2_inprocess.dll] Known dotnet.exe location: 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2_inprocess.dll] Process path 'dotnet.exe' is dotnet, treating application as portable
+[aspnetcorev2_inprocess.dll] Resolving absolute path to hostfxr.dll from 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2_inprocess.dll] hostfxr.dll located at 'C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll'
+[aspnetcorev2_inprocess.dll] Converted argument '.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll' to 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll'
+[aspnetcorev2_inprocess.dll] Parsed hostfxr options: dotnet location: 'C:\Program Files\dotnet\dotnet.exe' hostfxr path: 'C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll' arguments:
+[aspnetcorev2_inprocess.dll] Argument[0] = 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2_inprocess.dll] Argument[1] = 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll'
+[aspnetcorev2_inprocess.dll] Setting environment variable ASPNETCORE_ENVIRONMENT=Development
+[aspnetcorev2_inprocess.dll] Setting environment variable ASPNETCORE_IIS_HTTPAUTH=anonymous;
+[aspnetcorev2_inprocess.dll] Setting environment variable ASPNETCORE_IIS_PHYSICAL_PATH=C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\
+[aspnetcorev2_inprocess.dll] Loading hostfxr from location C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll
+[aspnetcorev2_inprocess.dll] Initial Dll directory: '', current directory: 'c:\windows\system32\inetsrv'
+[aspnetcorev2_inprocess.dll] Setting dll directory to c:\windows\system32\inetsrv
+[aspnetcorev2_inprocess.dll] Setting current directory to C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\
+[aspnetcorev2_inprocess.dll] In-process callbacks set
+[aspnetcorev2_inprocess.dll] Event Log: 'Application 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\' started successfully.' 
+End Event Log Message.
+[aspnetcorev2_inprocess.dll] Starting app_offline monitoring in application 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\'
+[aspnetcorev2_inprocess.dll] Adding request. Total Request Count 1
+[aspnetcorev2_inprocess.dll] Starting file watcher thread
+[aspnetcorev2_inprocess.dll] Removing Request 0
+[aspnetcorev2_inprocess.dll] Adding request. Total Request Count 1
+[aspnetcorev2_inprocess.dll] Removing Request 0
+[aspnetcorev2.dll] ASPNET_CORE_GLOBAL_MODULE::OnGlobalConfigurationChange 'MACHINE/WEBROOT/APPHOST/PARKINGMANAGEMENT/API'
+[aspnetcorev2.dll] Stopping application '/LM/W3SVC/3/ROOT/api'
+[aspnetcorev2_inprocess.dll] Stopping CLR
+[aspnetcorev2_inprocess.dll] Drained all requests, notifying managed.
+[aspnetcorev2_inprocess.dll] Starting shutdown sequence 0
+[aspnetcorev2_inprocess.dll] Waiting for 0 requests to drain
+[aspnetcorev2_inprocess.dll] Managed application exited with code 0
+[aspnetcorev2_inprocess.dll] Clr thread wait ended: clrThreadExited: 1
+[aspnetcorev2_inprocess.dll] Event Log: 'Application 'MACHINE/WEBROOT/APPHOST/PARKINGMANAGEMENT/API' has shutdown.' 
+End Event Log Message.
+[aspnetcorev2_inprocess.dll] Canceling standard stream pipe reader
+[aspnetcorev2_inprocess.dll] Stopping in-process worker thread
+[aspnetcorev2_inprocess.dll] Stopping file watcher thread
+[aspnetcorev2.dll] ASPNET_CORE_GLOBAL_MODULE::OnGlobalStopListening
+[aspnetcorev2.dll] ASPNET_CORE_GLOBAL_MODULE::Terminate
+[aspnetcorev2.dll] Initializing logs for 'C:\Program Files\IIS\Asp.Net Core Module\V2\aspnetcorev2.dll'. Process Id: 32328.. File Version: 15.0.21270.11. Description: IIS ASP.NET Core Module V2. Commit: 2924ca229b3d6c91b7c9eded119b31dfd7aa1fef.
+[aspnetcorev2.dll] Resolving hostfxr parameters for application: 'dotnet' arguments: '.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll' path: 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\'
+[aspnetcorev2.dll] Known dotnet.exe location: ''
+[aspnetcorev2.dll] Process path 'dotnet.exe' is dotnet, treating application as portable
+[aspnetcorev2.dll] Resolving absolute path to dotnet.exe from 'dotnet.exe'
+[aspnetcorev2.dll] Invoking where.exe to find dotnet.exe
+[aspnetcorev2.dll] where.exe invocation returned: 'C:\Program Files\dotnet\dotnet.exe
+C:\Program Files (x86)\dotnet\dotnet.exe
+'
+[aspnetcorev2.dll] Current process bitness type detected as isX64=1
+[aspnetcorev2.dll] Processing entry 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2.dll] Binary type 6
+[aspnetcorev2.dll] Found dotnet.exe via where.exe invocation at 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2.dll] Resolving absolute path to hostfxr.dll from 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2.dll] hostfxr.dll located at 'C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll'
+[aspnetcorev2.dll] Converted argument '.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll' to 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll'
+[aspnetcorev2.dll] Parsed hostfxr options: dotnet location: 'C:\Program Files\dotnet\dotnet.exe' hostfxr path: 'C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll' arguments:
+[aspnetcorev2.dll] Argument[0] = 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2.dll] Argument[1] = 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll'
+[aspnetcorev2.dll] Loading hostfxr from location C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll
+[aspnetcorev2.dll] Canceling standard stream pipe reader
+[aspnetcorev2.dll] Loading request handler:  'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.11\aspnetcorev2_inprocess.dll'
+[aspnetcorev2.dll] Creating handler application
+[aspnetcorev2_inprocess.dll] Initializing logs for 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.11\aspnetcorev2_inprocess.dll'. Process Id: 32328.. File Version: 15.0.21270.11. Description: IIS ASP.NET Core Module V2 Request Handler. Commit: 2924ca229b3d6c91b7c9eded119b31dfd7aa1fef.
+[aspnetcorev2_inprocess.dll] Waiting for initialization
+[aspnetcorev2_inprocess.dll] Starting in-process worker thread
+[aspnetcorev2_inprocess.dll] Resolving hostfxr parameters for application: 'dotnet' arguments: '.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll' path: 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\'
+[aspnetcorev2_inprocess.dll] Known dotnet.exe location: 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2_inprocess.dll] Process path 'dotnet.exe' is dotnet, treating application as portable
+[aspnetcorev2_inprocess.dll] Resolving absolute path to hostfxr.dll from 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2_inprocess.dll] hostfxr.dll located at 'C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll'
+[aspnetcorev2_inprocess.dll] Converted argument '.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll' to 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll'
+[aspnetcorev2_inprocess.dll] Parsed hostfxr options: dotnet location: 'C:\Program Files\dotnet\dotnet.exe' hostfxr path: 'C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll' arguments:
+[aspnetcorev2_inprocess.dll] Argument[0] = 'C:\Program Files\dotnet\dotnet.exe'
+[aspnetcorev2_inprocess.dll] Argument[1] = 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\.\bin\Debug\net5.0\ParkingManagement.WebClient.Api.dll'
+[aspnetcorev2_inprocess.dll] Setting environment variable ASPNETCORE_ENVIRONMENT=Development
+[aspnetcorev2_inprocess.dll] Setting environment variable ASPNETCORE_IIS_HTTPAUTH=anonymous;
+[aspnetcorev2_inprocess.dll] Setting environment variable ASPNETCORE_IIS_PHYSICAL_PATH=C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\
+[aspnetcorev2_inprocess.dll] Loading hostfxr from location C:\Program Files\dotnet\host\fxr\5.0.11\hostfxr.dll
+[aspnetcorev2_inprocess.dll] Initial Dll directory: '', current directory: 'c:\windows\system32\inetsrv'
+[aspnetcorev2_inprocess.dll] Setting dll directory to c:\windows\system32\inetsrv
+[aspnetcorev2_inprocess.dll] Setting current directory to C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\
+[aspnetcorev2_inprocess.dll] In-process callbacks set
+[aspnetcorev2_inprocess.dll] Event Log: 'Application 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\' started successfully.' 
+End Event Log Message.
+[aspnetcorev2_inprocess.dll] Starting app_offline monitoring in application 'C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\'
+[aspnetcorev2_inprocess.dll] Adding request. Total Request Count 1
+[aspnetcorev2_inprocess.dll] Starting file watcher thread
+[aspnetcorev2_inprocess.dll] Removing Request 0
+[aspnetcorev2.dll] ASPNET_CORE_GLOBAL_MODULE::OnGlobalConfigurationChange 'MACHINE/WEBROOT/APPHOST/PARKINGMANAGEMENT/API'
+[aspnetcorev2.dll] Stopping application '/LM/W3SVC/3/ROOT/api'
+[aspnetcorev2_inprocess.dll] Stopping CLR
+[aspnetcorev2_inprocess.dll] Drained all requests, notifying managed.
+[aspnetcorev2_inprocess.dll] Waiting for 0 requests to drain
+[aspnetcorev2_inprocess.dll] Starting shutdown sequence 0
+[aspnetcorev2_inprocess.dll] Managed application exited with code 0
+[aspnetcorev2_inprocess.dll] Clr thread wait ended: clrThreadExited: 1
+[aspnetcorev2_inprocess.dll] Event Log: 'Application 'MACHINE/WEBROOT/APPHOST/PARKINGMANAGEMENT/API' has shutdown.' 
+End Event Log Message.
+[aspnetcorev2_inprocess.dll] Canceling standard stream pipe reader
+[aspnetcorev2_inprocess.dll] Stopping in-process worker thread
+[aspnetcorev2_inprocess.dll] Stopping file watcher thread
+[aspnetcorev2.dll] ASPNET_CORE_GLOBAL_MODULE::OnGlobalStopListening
+[aspnetcorev2.dll] ASPNET_CORE_GLOBAL_MODULE::Terminate
