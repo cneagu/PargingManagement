@@ -126,3 +126,4 @@ C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingMan
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\obj\Debug\net5.0\ref\ParkingManagement.WebClient.Api.dll
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\obj\Debug\net5.0\ParkingManagement.WebClient.Api.pdb
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\obj\Debug\net5.0\ParkingManagement.WebClient.Api.genruntimeconfig.cache
+C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.WebClient.Api\obj\Debug\net5.0\ParkingManagement.WebClient.Api.csproj.CopyComplete

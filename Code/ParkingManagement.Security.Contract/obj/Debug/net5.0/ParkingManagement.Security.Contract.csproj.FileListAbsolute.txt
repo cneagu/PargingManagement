@@ -20,3 +20,4 @@ C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement.Security.C
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement.Security.Contract\obj\Debug\net5.0\ParkingManagement.Security.Contract.dll
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement.Security.Contract\obj\Debug\net5.0\ref\ParkingManagement.Security.Contract.dll
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement.Security.Contract\obj\Debug\net5.0\ParkingManagement.Security.Contract.pdb
+C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement.Security.Contract\obj\Debug\net5.0\ParkingManagement.Security.Contract.csproj.AssemblyReference.cache

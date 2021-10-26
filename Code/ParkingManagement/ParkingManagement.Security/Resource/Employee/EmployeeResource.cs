@@ -1,5 +1,6 @@
 ﻿using ParkingManagement.Infrastructure;
 using ParkingManagement.Security.Resource.Employee.Contract;
+using System.Collections.Generic;
 
 namespace ParkingManagement.Security.Resource.Employee
 {
@@ -14,9 +15,8 @@ namespace ParkingManagement.Security.Resource.Employee
 
         public Contract.Employee SelectByEmail(string email)
         {
-            Contract.Employee employee = SqlDataAccess.Read<Contract.Employee>(string.Format("SELECT * FROM Employee WHERE Email = {0}", email.ToSqlValue()), config.ConnectionString)[0];
-
-            return employee;
+            List<Contract.Employee> employee = SqlDataAccess.Read<Contract.Employee>(string.Format("SELECT * FROM Employee WHERE Email = {0}", email.ToSqlValue()), config.ConnectionString);
+            return employee.Count > 0 ? employee[0] : null;
         }
 
         public void Insert(Contract.Employee employee)

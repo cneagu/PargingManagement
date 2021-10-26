@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ParkingManagement.Infrastructure;
 using ParkingManagement.Security.Contract.Employee;
 using ParkingManagement.WebClient.Api.Models.Authentication;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +49,7 @@ namespace ParkingManagement.WebClient.Api.Controllers
 
         private LoginResult GetLoginResult(Models.Authentication.LoginReturn loginReturn)
         {
-            LoginResult loginResult = new LoginResult
+            LoginResult loginResult = new()
             {
                 Status = loginReturn.Status
             };
@@ -72,7 +68,7 @@ namespace ParkingManagement.WebClient.Api.Controllers
             return loginResult;
         }
 
-        private Token GenerateToken(Claim[] claims, double expiryTime, SecurityKey securityKey)
+        private static Token GenerateToken(Claim[] claims, double expiryTime, SecurityKey securityKey)
         {
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
             SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
