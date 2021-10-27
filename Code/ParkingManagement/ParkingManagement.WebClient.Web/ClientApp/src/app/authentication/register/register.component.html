@@ -1,1 +1,61 @@
-<p>register works!</p>
+<h2 class="header">{{ 'register' | translate }}</h2>
+<form #form="ngForm" (submit)="register()">
+  <mat-form-field>
+    <input matInput
+           placeholder="First Name"
+           type="text"
+           name="firstName"
+           [(ngModel)]="firstName"
+           #firstNameControl="ngModel"
+           required>
+    <mat-error *ngIf="firstNameControl.invalid">{{ 'requiredField' | translate }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Last Name"
+           type="text"
+           name="lastName"
+           [(ngModel)]="lastName"
+           #lastNameControl="ngModel"
+           required>
+    <mat-error *ngIf="lastNameControl.invalid">{{ 'requiredField' | translate }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Email"
+           type="email"
+           name="email"
+           [(ngModel)]="email"
+           #emailControl="ngModel"
+           email
+           required>
+    <mat-error *ngIf="emailControl.invalid">{{ 'invalidEmail' | translate }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Password"
+           type="password"
+           name="password"
+           [(ngModel)]="password"
+           #passwordControl="ngModel"
+           required
+           minlength="8"
+           maxlength="256">
+    <mat-error *ngIf="passwordControl.invalid">{{ getValidationError(passwordControl.errors) | translate }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Password Confirmation"
+           type="password"
+           name="passwordConfirmation"
+           [(ngModel)]="passwordConfirmation"
+           #passwordConfirmationControl="ngModel"
+           [match]="password"
+           required>
+    <mat-error *ngIf="passwordConfirmationControl.invalid">{{ getValidationError(passwordConfirmationControl.errors) | translate }}</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">{{ 'register' | translate }}</button>
+  <div class="note">
+    {{ 'registerNote' | translate }} <a [routerLink]="['/authentication/login']">{{ 'login' | translate }}</a>
+  </div>
+</form>

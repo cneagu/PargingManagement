@@ -3,6 +3,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { TextService } from '../../core/text.service';
+import { ProgressBarService } from '../../core/components/progress-bar/progress-bar.service';
 
 import { AuthenticationService } from '../authentication.service';
 import { LoginStatus } from '../authentication.model';
@@ -21,13 +22,18 @@ export class LoginComponent {
     private router: Router,
     private textService: TextService,
     private snackbar: MatSnackBar,
+    private progressBarService: ProgressBarService
   ) { }
 
   ngOnDestroy() {
   }
 
   login() {
+    this.progressBarService.push(true);
 
+    setTimeout(() => {
+      console.log('hello');
+    }, 100000);
     this.authService.login({
       email: this.email,
       password: this.password
@@ -40,10 +46,12 @@ export class LoginComponent {
         this.router.navigate(['/home']);
       }
 
-      //this.progressBarService.push(false);
+      this.progressBarService.push(false);
     }, (error: any) => {
       const message = this.textService.getText('genericError');
+      this.snackbar.open(message, this.textService.getText('close'));
 
+      this.progressBarService.push(false);
 
     });
   }
