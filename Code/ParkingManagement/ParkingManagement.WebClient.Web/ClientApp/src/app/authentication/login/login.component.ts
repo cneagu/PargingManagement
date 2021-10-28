@@ -31,9 +31,6 @@ export class LoginComponent {
   login() {
     this.progressBarService.push(true);
 
-    setTimeout(() => {
-      console.log('hello');
-    }, 100000);
     this.authService.login({
       email: this.email,
       password: this.password

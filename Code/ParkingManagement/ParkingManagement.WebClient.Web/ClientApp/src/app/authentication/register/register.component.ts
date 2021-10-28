@@ -61,7 +61,9 @@ export class RegisterComponent implements OnDestroy {
       });
   }
 
-  getValidationError(errors: ValidationErrors): string {
+  getValidationError(errors: ValidationErrors | null): string {
+    if (errors == null)
+      return 'something is wrong';
     if (errors.minlength)
       return 'passwordTooShort';
     if (errors.maxlength)
