@@ -65,6 +65,10 @@ namespace ParkingManagement.Infrastructure
             {
                 return ToSqlValue((string)value);
             }
+            if (type == typeof(Enum))
+            {
+                return ToSqlValue((int)value);
+            }
             if (type == typeof(bool?))
             {
                 return ToSqlValue((bool?)value);

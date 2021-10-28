@@ -12,6 +12,8 @@ namespace ParkingManagement.Security.Resource.Employee.Contract
         public string Password { get; set; }
         public decimal Priority { get; set; }
         public Status Status { get; set; }
+        public bool HasParkingSpot { get; set; }
+        public Guid DepartmentID { get; set; }
     }
 
     public enum Role

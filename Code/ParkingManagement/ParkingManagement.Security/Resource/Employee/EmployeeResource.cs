@@ -21,8 +21,7 @@ namespace ParkingManagement.Security.Resource.Employee
 
         public void Insert(Contract.Employee employee)
         {
-            //employeeadministrationmanager.addemployee(employee.deepcopyto<parkingmanagement.contract.employee.employee>());
-            throw new System.NotImplementedException();
+            SqlDataAccess.Insert(employee, "Employee", config.ConnectionString);
         }
 
         public int CountByEmail(string email)

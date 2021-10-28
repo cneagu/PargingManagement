@@ -35,7 +35,6 @@ namespace ParkingManagement.WebClient.Api.Controllers
             refreshTokenKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(config.RefreshTokenKey));
         }
 
-        [AllowAnonymous]
         [HttpPost]
         public async Task<LoginResult> Login([FromBody] LoginModel loginModel)
         {
@@ -45,6 +44,44 @@ namespace ParkingManagement.WebClient.Api.Controllers
             });
 
             return GetLoginResult(loginReturn);
+        }
+
+        [HttpPost]
+        public async Task<RegisterResult> Register([FromBody] RegisterModel registerModel)
+        {
+            RegisterReturn registerReturn = await Task.Run(() =>
+            {
+                return employeeSecurityManager.Register(new RegisterEmployee
+                {
+                    FirstName = registerModel.FirstName,
+                    LastName = registerModel.LastName,
+                    Email = registerModel.Email,
+                    Password = registerModel.Password
+                });
+            });
+
+            return GetRegisterResult(registerReturn);
+        }
+
+        private RegisterResult GetRegisterResult(RegisterReturn registerReturn)
+        {
+            RegisterResult registerResult = new RegisterResult
+            {
+                Status = (Models.Authentication.RegisterStatus)registerReturn.Status
+            };
+
+            if (registerResult.Status != Models.Authentication.RegisterStatus.Success)
+                return registerResult;
+
+            Claim[] claims = new Claim[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, registerReturn.EmployeeID.ToString())
+            };
+
+            registerResult.AccessToken = GenerateToken(claims, accessTokenExpiry, accessTokenKey);
+            registerResult.RefreshToken = GenerateToken(claims, refreshTokenExpiry, refreshTokenKey);
+
+            return registerResult;
         }
 
         private LoginResult GetLoginResult(Models.Authentication.LoginReturn loginReturn)

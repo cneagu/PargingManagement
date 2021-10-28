@@ -65,7 +65,7 @@ namespace ParkingManagement.Security.Manager.Employee
 
             string hashedPassword = encryptionUtility.ComputeHashWithSalt(registerEmployee.Password);
 
-            Resource.Employee.Contract.Employee employee = new Resource.Employee.Contract.Employee
+            Resource.Employee.Contract.Employee employee = new()
             {
                 ID = Guid.NewGuid(),
                 FirstName = registerEmployee.FirstName,
@@ -74,7 +74,9 @@ namespace ParkingManagement.Security.Manager.Employee
                 Role = Role.Employee,
                 Password = hashedPassword,
                 Priority = 0,
-                Status = Status.None
+                Status = Status.None,
+                HasParkingSpot = false,
+                DepartmentID = Guid.Empty
             };
 
             employeeResource.Insert(employee);

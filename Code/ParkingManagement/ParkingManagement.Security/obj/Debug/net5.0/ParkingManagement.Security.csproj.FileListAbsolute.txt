@@ -31,3 +31,4 @@ C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingMan
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.Security\obj\Debug\net5.0\ParkingManagement.Security.dll
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.Security\obj\Debug\net5.0\ref\ParkingManagement.Security.dll
 C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.Security\obj\Debug\net5.0\ParkingManagement.Security.pdb
+C:\Users\CNeagu\source\repos\PargingManagement\Code\ParkingManagement\ParkingManagement.Security\obj\Debug\net5.0\ParkingManagement.Security.csproj.CopyComplete
