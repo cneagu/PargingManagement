@@ -48,10 +48,18 @@ namespace ParkingManagement.Infrastructure
         {
             return value.HasValue ? value.Value.ToString() : "null";
         }
+        public static string ToSqlValue(this int value)
+        {
+            return value.ToString();
+        }
 
         public static string ToSqlValue(this decimal? value)
         {
             return value.HasValue ? value.Value.ToString() : "null";
+        }
+        public static string ToSqlValue(this decimal value)
+        {
+            return  value.ToString();
         }
 
         public static string ToSqlValue(this byte[] value)
@@ -65,7 +73,7 @@ namespace ParkingManagement.Infrastructure
             {
                 return ToSqlValue((string)value);
             }
-            if (type == typeof(Enum))
+            if (type.IsEnum)
             {
                 return ToSqlValue((int)value);
             }
@@ -93,9 +101,17 @@ namespace ParkingManagement.Infrastructure
             {
                 return ToSqlValue((Guid)value);
             }
+            if (type == typeof(int))
+            {
+                return ToSqlValue((int)value);
+            }
             if (type == typeof(int?))
             {
                 return ToSqlValue((int?)value);
+            }
+            if (type == typeof(decimal))
+            {
+                return ToSqlValue((decimal)value);
             }
             if (type == typeof(decimal?))
             {
