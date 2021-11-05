@@ -1,1 +1,9 @@
-<p>home works!</p>
+<mat-toolbar color="primary" class="menu">
+  <div class="logo">
+    <img src="assets/logo.png" />
+  </div>
+  <button *ngIf="isActivated" mat-button color="secondary" (click)="navigateToParkingDashboard()">{{ 'parkingDashboard' | translate }}</button>
+  <button mat-button color="secondary" (click)="logout()">{{ 'logout' | translate }}</button>
+</mat-toolbar>
+<p *ngIf="!isActivated" class="account-message">{{ 'accountNotActivatedMessage' | translate }}</p>
+<router-outlet></router-outlet>

@@ -8,10 +8,6 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ParkingManagement.Infrastructure;
 using ParkingManagement.Security;
-using ParkingManagement.Security.Contract.Employee;
-using ParkingManagement.Security.Manager.Employee;
-using ParkingManagement.Security.Resource.Employee;
-using ParkingManagement.Security.Resource.Employee.Contract;
 using System;
 using System.Text;
 
@@ -32,8 +28,10 @@ namespace ParkingManagement.WebClient.Api
             Framework.IConfig config = new Framework.Config();
             Configuration.GetSection("ApiConfig").Bind(config);
             services.AddSingleton<Framework.IConfig>(x => (Framework.Config)config);
+            services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
             services.AddSecurityServices(Configuration);
+            services.AddBusinessServices(Configuration);
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -70,7 +68,8 @@ namespace ParkingManagement.WebClient.Api
             }
 
             app.UseRouting();
-
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseCors(x => x
                 .AllowAnyOrigin()
@@ -79,9 +78,7 @@ namespace ParkingManagement.WebClient.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }

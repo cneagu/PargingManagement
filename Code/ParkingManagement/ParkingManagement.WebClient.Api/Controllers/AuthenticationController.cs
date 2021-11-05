@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ParkingManagement.WebClient.Api.Controllers
 {
-    [Route("/{controller}/{action}")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {

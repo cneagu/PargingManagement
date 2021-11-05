@@ -1,0 +1,23 @@
+@import '../../scss/custom-variables.scss';
+
+:host {
+  width: 100%;
+  height: 100%;
+
+  .menu {
+    .logo {
+      flex-grow: 1;
+      box-sizing: border-box;
+      height: 100%;
+      padding: 8px;
+
+      img {
+        max-height: 100%;
+      }
+    }
+  }
+
+  .account-message {
+    text-align: center;
+  }
+}

@@ -342,9 +342,5 @@ namespace ParkingManagement.Infrastructure
         {
             return new Exception("Error while executing query : " + sql, ex);
         }
-
-        public interface IConfig
-        {
-        }
     }
 }

@@ -34,6 +34,8 @@
       "ParkingManagement.WebClient.Api/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.11",
+          "ParkingManagement": "1.0.0",
+          "ParkingManagement.Contract": "1.0.0",
           "ParkingManagement.Infrastructure": "1.0.0",
           "ParkingManagement.Security": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -770,6 +772,29 @@
       "System.Windows.Extensions/5.0.0": {
         "dependencies": {
           "System.Drawing.Common": "5.0.0"
+        }
+      },
+      "ParkingManagement/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "5.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "ParkingManagement.Contract": "1.0.0",
+          "ParkingManagement.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "ParkingManagement.dll": {}
+        },
+        "compile": {
+          "ParkingManagement.dll": {}
+        }
+      },
+      "ParkingManagement.Contract/1.0.0": {
+        "runtime": {
+          "ParkingManagement.Contract.dll": {}
+        },
+        "compile": {
+          "ParkingManagement.Contract.dll": {}
         }
       },
       "ParkingManagement.Infrastructure/1.0.0": {
@@ -2822,6 +2847,16 @@
       "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
+    },
+    "ParkingManagement/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ParkingManagement.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ParkingManagement.Infrastructure/1.0.0": {
       "type": "project",

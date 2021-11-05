@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ParkingManagement.Infrastructure
 {
@@ -122,6 +124,21 @@ namespace ParkingManagement.Infrastructure
                 return ToSqlValue((byte[])value);
             }
             return "null";
+        }
+
+        public static string ToSqlInClause(this IEnumerable<Guid> items)
+        {
+            if (items == null)
+            {
+                throw new ArgumentNullException("items", "cannot generate a valid SQL IN clause with a null item list");
+            }
+
+            if (!items.Any())
+            {
+                throw new ArgumentOutOfRangeException("items", "cannot generate a valid SQL IN clause with an empty item list");
+            }
+
+            return string.Join(", ", items.Select(x => x.ToSqlValue()));
         }
     }
 }

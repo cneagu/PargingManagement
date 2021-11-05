@@ -12,7 +12,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ParkingManagement.Infrastructure\ParkingManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\ParkingManagement.Contract\ParkingManagement.Contract.csproj" />
     <ProjectReference Include="..\ParkingManagement.Security\ParkingManagement.Security.csproj" />
+    <ProjectReference Include="..\ParkingManagement\ParkingManagement.csproj" />
   </ItemGroup>
 
 </Project>

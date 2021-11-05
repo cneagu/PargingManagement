@@ -622,6 +622,33 @@
           }
         }
       },
+      "ParkingManagement/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "5.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "ParkingManagement.Contract": "1.0.0",
+          "ParkingManagement.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ParkingManagement.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParkingManagement.dll": {}
+        }
+      },
+      "ParkingManagement.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ParkingManagement.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParkingManagement.Contract.dll": {}
+        }
+      },
       "ParkingManagement.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1919,6 +1946,16 @@
         "version.txt"
       ]
     },
+    "ParkingManagement/1.0.0": {
+      "type": "project",
+      "path": "../ParkingManagement/ParkingManagement.csproj",
+      "msbuildProject": "../ParkingManagement/ParkingManagement.csproj"
+    },
+    "ParkingManagement.Contract/1.0.0": {
+      "type": "project",
+      "path": "../ParkingManagement.Contract/ParkingManagement.Contract.csproj",
+      "msbuildProject": "../ParkingManagement.Contract/ParkingManagement.Contract.csproj"
+    },
     "ParkingManagement.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../../ParkingManagement.Infrastructure/ParkingManagement.Infrastructure.csproj",
@@ -1938,6 +1975,8 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.11",
+      "ParkingManagement >= 1.0.0",
+      "ParkingManagement.Contract >= 1.0.0",
       "ParkingManagement.Infrastructure >= 1.0.0",
       "ParkingManagement.Security >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
@@ -1981,8 +2020,14 @@
             "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement.Infrastructure\\ParkingManagement.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement.Infrastructure\\ParkingManagement.Infrastructure.csproj"
             },
+            "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement\\ParkingManagement.Contract\\ParkingManagement.Contract.csproj": {
+              "projectPath": "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement\\ParkingManagement.Contract\\ParkingManagement.Contract.csproj"
+            },
             "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement\\ParkingManagement.Security\\ParkingManagement.Security.csproj": {
               "projectPath": "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement\\ParkingManagement.Security\\ParkingManagement.Security.csproj"
+            },
+            "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement\\ParkingManagement\\ParkingManagement.csproj": {
+              "projectPath": "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement\\ParkingManagement\\ParkingManagement.csproj"
             }
           }
         }

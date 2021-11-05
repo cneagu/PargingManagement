@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Code/ParkingManagement/ParkingManagement.Contract/obj
+/Code/ParkingManagement/ParkingManagement/bin/Debug/net5.0
+/Code/ParkingManagement/ParkingManagement/obj/Debug/net5.0
+/Code/ParkingManagement/ParkingManagement/obj
+/Code/ParkingManagement/ParkingManagement.Contract/bin/Debug/net5.0/ref
+/Code/ParkingManagement/ParkingManagement.Contract/bin/Debug/net5.0
