@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ta1FRD+Pe7jlYliaQxf+g3tcCXEEHXwGWQriTSkE2iSr7rNpISNR+g9BlfteBL2UEBfQIJujmq2Gjok9ewJFJA==",
+  "dgSpecHash": "hJtcPX1K0TE+eOqAI/Tm0Cc5t+daQGIvihdlcaj00zC/V4ZvaXwUiEPBa1ZDjJhC8+CZlezmKDuwNKunoR2Sew==",
   "success": true,
   "projectFilePath": "C:\\Users\\CNeagu\\source\\repos\\PargingManagement\\Code\\ParkingManagement\\ParkingManagement.WebClient.Api\\ParkingManagement.WebClient.Api.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
     "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.13.1\\microsoft.identitymodel.jsonwebtokens.6.13.1.nupkg.sha512",
     "C:\\Users\\CNeagu\\.nuget\\packages\\microsoft.identitymodel.logging\\6.13.1\\microsoft.identitymodel.logging.6.13.1.nupkg.sha512",

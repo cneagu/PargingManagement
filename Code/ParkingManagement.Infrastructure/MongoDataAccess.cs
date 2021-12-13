@@ -1,4 +1,8 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -6,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ParkingManagement.Infrastructure
 {
-    public class MongoDataAccess
+    public class MongoDataAccess : IMongoDataAccess
     {
         private readonly IMongoClient client;
         private readonly IMongoDatabase database;
@@ -32,12 +36,24 @@ namespace ParkingManagement.Infrastructure
             await GetCollection<T>(collectionName).ReplaceOneAsync(filter, obj, new ReplaceOptions() { IsUpsert = true });
         }
 
+        public async Task UpdateSingleItem<Model,Type>(string collectionName, Expression<Func<Model, bool>> filter, Type item)
+        {
+            var serializerSettings = new JsonSerializerSettings()
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                DefaultValueHandling = DefaultValueHandling.Ignore
+            };
+            var bson = new BsonDocument() { { "$set", BsonDocument.Parse(JsonConvert.SerializeObject(item, serializerSettings)) } };
+
+            await GetCollection<Model>(collectionName).UpdateOneAsync(filter, bson);
+        }
+
         public async Task DeleteAsync<T>(string collectionName, Expression<Func<T, bool>> filter)
         {
             await GetCollection<T>(collectionName).DeleteManyAsync(filter);
         }
 
-        public async Task<long> ContAsync<T>(string collectionName, Expression<Func<T, bool>> filter = null)
+        public async Task<long> CountAsync<T>(string collectionName, Expression<Func<T, bool>> filter = null)
         {
             return await BuildQueryExpression(collectionName, filter).CountDocumentsAsync();
         }
@@ -74,7 +90,11 @@ namespace ParkingManagement.Infrastructure
 
         private IMongoCollection<T> GetCollection<T>(string collectionName)
         {
-            return database.GetCollection<T>(collectionName);
+            MongoCollectionSettings collectionSettings = new()
+            {
+                GuidRepresentation = GuidRepresentation.Standard
+            };
+            return database.GetCollection<T>(collectionName, collectionSettings);
         }
     }
 }

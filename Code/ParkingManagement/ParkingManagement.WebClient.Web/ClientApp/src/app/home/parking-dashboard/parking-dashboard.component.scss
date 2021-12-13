@@ -1,0 +1,44 @@
+@import "../../../scss/custom-variables.scss";
+
+.header {
+  text-align: center;
+  padding: 0 $margin-lg;
+}
+
+.dashboard-filter {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $table-max-width) {
+    display: contents;
+  }
+
+  .button-filter {
+    align-self: center;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .table-container,
+  .search-field,
+  .dashboard-filter {
+    width: 100%;
+    max-width: $table-max-width;
+  }
+
+  .table-container {
+    margin: $margin-lg 0;
+
+    .unallocated {
+      font-style: italic;
+    }
+
+    .align-right {
+      text-align: center;
+    }
+  }
+}

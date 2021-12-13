@@ -2,38 +2,44 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ParkingManagement.Contract.Employee;
+using ParkingManagement.Contract.ParkingAdministration;
+using ParkingManagement.Contract.ParkingAllocation;
 using ParkingManagement.Infrastructure;
 using ParkingManagement.WebClient.Api.Models.Home;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using AllocationResult = ParkingManagement.WebClient.Api.Models.Home.AllocationResult;
+using AvailableParkingSpot = ParkingManagement.WebClient.Api.Models.Home.AvailableParkingSpot;
+using DateInput = ParkingManagement.WebClient.Api.Models.Home.DateInput;
+using DateInputStatus = ParkingManagement.WebClient.Api.Models.Home.DateInputStatus;
+using Department = ParkingManagement.WebClient.Api.Models.Home.Department;
 
 namespace ParkingManagement.WebClient.Api.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class HomeController : ControllerBase
     {
         private readonly int closeAllocationsHour;
-        //public IParkingAdministrationManager parkingAdministrationManager { get; set; }
+        public IParkingAdministrationManager parkingAdministrationManager;
         public IDateTimeProvider dateTimeProvider;
         public IEmployeeAdministrationManager employeeAdministrationManager;
-        //public IParkingAllocationManager parkingAllocationManager { get; set; }
+        public IParkingAllocationManager parkingAllocationManager;
 
         public HomeController(Framework.IConfig config,
-            //IParkingAdministrationManager parkingAdministrationManager,
+            IParkingAdministrationManager parkingAdministrationManager,
             IDateTimeProvider dateTimeProvider,
-            IEmployeeAdministrationManager employeeAdministrationManager)
-            //IParkingAllocationManager parkingAllocationManager)
+            IEmployeeAdministrationManager employeeAdministrationManager,
+            IParkingAllocationManager parkingAllocationManager)
         {
             closeAllocationsHour = config.CloseAllocationsHour;
-            //this.parkingAdministrationManager = parkingAdministrationManager;
+            this.parkingAdministrationManager = parkingAdministrationManager;
             this.dateTimeProvider = dateTimeProvider;
             this.employeeAdministrationManager = employeeAdministrationManager;
-            //this.parkingAllocationManager = parkingAllocationManager;
+            this.parkingAllocationManager = parkingAllocationManager;
         }
 
         [HttpGet]
@@ -46,14 +52,17 @@ namespace ParkingManagement.WebClient.Api.Controllers
         public async Task<IActionResult> GetEmployeeDetails()
         {
             ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
-            Guid employeeId = new(identity.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value);
+            if (!identity.Claims.Any())
+                return BadRequest();
+
+            Guid employeeId = new(identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value);
 
             Employee employee = await Task.Run(() =>
             {
                 return employeeAdministrationManager.DetailEmployeeByID(employeeId);
             });
 
-            EmployeeDetail emplyeeDetails = new EmployeeDetail
+            EmployeeDetail emplyeeDetails = new()
             {
                 IsParkingOwner = employee.HasParkingSpot,
                 IsAccountActivated = employee.Status != Status.None,
@@ -62,75 +71,82 @@ namespace ParkingManagement.WebClient.Api.Controllers
             return Ok(emplyeeDetails);
         }
 
-        //[HttpPost]
-        //public async Task<Models.Home.DateInputStatus> AddAvailableParkingSpot(Models.Home.DateInput dateInput)
-        //{
-        //    ClaimsIdentity identity = HttpContext.Current.User.Identity as ClaimsIdentity;
-        //    Guid employeeId = new Guid(identity.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value);
+        [HttpPost]
+        public async Task<DateInputStatus> AddAvailableParkingSpot(DateInput dateInput)
+        {
+            ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (!identity.Claims.Any())
+                return DateInputStatus.None;
 
-        //    Models.Home.DateInputStatus status = await Task.Run(() =>
-        //    {
-        //        return (Models.Home.DateInputStatus)parkingAdministrationManager.AddAvailableParkingSpot(employeeId, dateInput.DeepCopyTo<Contract.ParkingAdministration.DateInput>());
-        //    });
+            Guid employeeId = new(identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value);
 
-        //    return status;
-        //}
+            DateInputStatus status = await Task.Run(() =>
+            {
+                return (DateInputStatus)parkingAdministrationManager.AddAvailableParkingSpot(employeeId, dateInput.DeepCopy<Contract.ParkingAdministration.DateInput>());
+            });
 
-        //[HttpGet]
-        //public async Task<Models.Home.AvailableParkingSpot[]> GetFutureAvailableParkingSpot()
-        //{
-        //    ClaimsIdentity identity = HttpContext.Current.User.Identity as ClaimsIdentity;
-        //    Guid employeeId = new Guid(identity.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value);
+            return status;
+        }
 
-        //    Contract.ParkingAdministration.AvailableParkingSpot[] parkingSpots = await Task.Run(() =>
-        //    {
-        //        return parkingAdministrationManager.ListAvailableParkingSpot(employeeId, GetMinDateOfSelection());
-        //    });
+        [HttpGet]
+        public async Task<AvailableParkingSpot[]> GetFutureAvailableParkingSpot()
+        {
+            //ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
+            //if (!identity.Claims.Any())
+            //    return null;
 
-        //    return parkingSpots.Select(x =>
-        //    {
-        //        return new Models.Home.AvailableParkingSpot
-        //        {
-        //            ID = x.ID.ToString(),
-        //            Date = x.EffectiveDate.ToString("dd/MM/yyyy")
-        //        };
-        //    }).OrderByDescending(x => x.Date).ToArray();
-        //}
+            //Guid employeeId = new(identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value);
+            Guid employeeId = new("5BCD305C-B050-425C-A8F5-9FC3E09AA6C6");
 
-        //[HttpGet("{id}")]
-        //public async Task<DashboardData> GetDashboardData(Guid departmentId)
-        //{
-        //    DashboardData dashboardData = new DashboardData
-        //    {
-        //        Departments = await Task.Run(() =>
-        //        {
-        //            return parkingAdministrationManager.ListDepartments().DeepCopyTo<Models.Home.Department[]>();
-        //        }),
-        //        AllocationResults = await Task.Run(() =>
-        //        {
-        //            return parkingAllocationManager.ListAllocationResults(departmentId, dateTimeProvider.DateUtc()).DeepCopyTo<Models.Home.AllocationResult[]>();
-        //        }),
-        //    };
+            Contract.ParkingAdministration.AvailableParkingSpot[] parkingSpots = await Task.Run(() =>
+            {
+                return parkingAdministrationManager.ListAvailableParkingSpot(employeeId, GetMinDateOfSelection());
+            });
 
-        //    return dashboardData;
-        //}
+            return parkingSpots.Select(x =>
+            {
+                return new AvailableParkingSpot
+                {
+                    ID = x.ID.ToString(),
+                    Date = x.EffectiveDate.ToString("dd/MM/yyyy")
+                };
+            }).OrderByDescending(x => x.Date).ToArray();
+        }
 
-        //[HttpGet("{id}")]
-        //public async Task<Models.Home.AllocationResult[]> GetAllocationResult([FromUri] DateTime date, Guid departmentId)
-        //{
-        //    Models.Home.AllocationResult[] allocationResult = await Task.Run(() =>
-        //    {
-        //        return parkingAllocationManager.ListAllocationResults(departmentId, dateTimeProvider.DateUtc(date)).DeepCopyTo<Models.Home.AllocationResult[]>();
-        //    });
+        [HttpGet("{departmentId}")]
+        public async Task<DashboardData> GetDashboardData(Guid departmentId)
+        {
+            DashboardData dashboardData = new()
+            {
+                Departments = await Task.Run(() =>
+                {
+                    return parkingAdministrationManager.ListDepartments().DeepCopy<Department[]>();
+                }),
+                AllocationResults = await Task.Run(() =>
+                {
+                    return parkingAllocationManager.ListAllocationResults(departmentId, dateTimeProvider.DateUtc()).DeepCopy<AllocationResult[]>();
+                }),
+            };
 
-        //    return allocationResult;
-        //}
+            return dashboardData;
+        }
 
-        //[HttpDelete]
-        //public void DeleteAvailableParkingSpot(Guid id)
-        //{
-        //    parkingAdministrationManager.DeleteAvailableParkingSpot(id);
-        //}
+        [HttpGet("{date}/{departmentId}")]
+        public async Task<AllocationResult[]> GetAllocationResult(DateTime date, Guid departmentId)
+        {
+            AllocationResult[] allocationResult = await Task.Run(() =>
+            {
+                return parkingAllocationManager.ListAllocationResults(departmentId, dateTimeProvider.DateUtc(date)).DeepCopy<AllocationResult[]>();
+            });
+
+            return allocationResult;
+        }
+
+        [HttpDelete]
+        public void DeleteAvailableParkingSpot(Guid id)
+        {
+            parkingAdministrationManager.DeleteAvailableParkingSpot(id);
+        }
 
         private DateTime GetMinDateOfSelection()
         {

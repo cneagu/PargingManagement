@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ParkingManagement.Security.Contract/1.0.0": {
+        "runtime": {
+          "ParkingManagement.Security.Contract.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ParkingManagement.Security.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

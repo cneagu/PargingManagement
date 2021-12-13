@@ -21,7 +21,7 @@ namespace ParkingManagement.Security.Manager.Employee
 
         public LoginReturn Login(string email, string password)
         {
-            LoginReturn loginReturn = new LoginReturn();
+            LoginReturn loginReturn = new();
 
             Resource.Employee.Contract.Employee employee = employeeResource.SelectByEmail(email);
 
@@ -54,7 +54,7 @@ namespace ParkingManagement.Security.Manager.Employee
 
         public RegisterReturn Register(RegisterEmployee registerEmployee)
         {
-            RegisterReturn registerReturn = new RegisterReturn();
+            RegisterReturn registerReturn = new();
 
             if (employeeResource.CountByEmail(registerEmployee.Email) > 0)
             {

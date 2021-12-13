@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3ef2698d-8739-4420-869e-112e30836528": {
+      "ProjectGuid": "3ef2698d-8739-4420-869e-112e30836528",
+      "DisplayName": "ParkingManagement.WebClient.Api",
+      "ColorIndex": 0
+    },
+    "09d017dc-a1e8-4321-89ec-95365fed8b2f": {
+      "ProjectGuid": "09d017dc-a1e8-4321-89ec-95365fed8b2f",
+      "DisplayName": "ParkingManagement.Infrastructure",
+      "ColorIndex": 1
+    },
+    "a7cc955a-4616-423b-a1d7-8c11a1916405": {
+      "ProjectGuid": "a7cc955a-4616-423b-a1d7-8c11a1916405",
+      "DisplayName": "ParkingManagement.Security",
+      "ColorIndex": 2
+    },
+    "4a33ec1c-f79b-4e8b-aa63-42f728c8659a": {
+      "ProjectGuid": "4a33ec1c-f79b-4e8b-aa63-42f728c8659a",
+      "DisplayName": "ParkingManagement",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "5766d101-d0eb-4298-b8a4-b190d087a477": {
+      "ProjectGuid": "5766d101-d0eb-4298-b8a4-b190d087a477",
+      "DisplayName": "ParkingManagement.Contract",
+      "ColorIndex": 4
+    },
+    "e4dc3f5b-da7d-428c-962e-f7eed1455595": {
+      "ProjectGuid": "e4dc3f5b-da7d-428c-962e-f7eed1455595",
+      "DisplayName": "ParkingManagement.WebClient.Web",
+      "ColorIndex": 5
+    },
+    "a624cd07-3857-4c6e-9267-a22f2f04ab50": {
+      "ProjectGuid": "a624cd07-3857-4c6e-9267-a22f2f04ab50",
+      "DisplayName": "ParkingManagement.Security.Contract",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}

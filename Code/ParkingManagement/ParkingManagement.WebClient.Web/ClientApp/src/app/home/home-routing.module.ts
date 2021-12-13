@@ -13,12 +13,12 @@ const routes: Routes = [
     resolve: [HomeResolver],
     children: [
       {
-        path: 'parking-registration',
-        loadChildren: './parking-registration/parking-registration.module#ParkingRegistrationModule'
-      },
-      {
         path: 'parking-dashboard',
         loadChildren: './parking-dashboard/parking-dashboard.module#ParkingDashboardModule'
+      },
+      {
+        path: 'parking-registration',
+        loadChildren: './parking-registration/parking-registration.module#ParkingRegistrationModule'
       }
     ]
   }

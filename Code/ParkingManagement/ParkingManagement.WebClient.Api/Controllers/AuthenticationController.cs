@@ -4,7 +4,9 @@ using Microsoft.IdentityModel.Tokens;
 using ParkingManagement.Infrastructure;
 using ParkingManagement.Security.Contract.Employee;
 using ParkingManagement.WebClient.Api.Models.Authentication;
+using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,9 +65,37 @@ namespace ParkingManagement.WebClient.Api.Controllers
             return GetRegisterResult(registerReturn);
         }
 
+        [HttpPost]
+        public RefreshReturn Refresh([FromBody] Token refreshToken)
+        {
+            ClaimsPrincipal employeeClaims = new JwtSecurityTokenHandler().ValidateToken(refreshToken.Value, new TokenValidationParameters()
+            {
+                ValidAudience = tokenAudience,
+                ValidIssuer = tokenIssuer,
+                IssuerSigningKey = refreshTokenKey,
+                ValidateLifetime = true,
+                ValidateAudience = true,
+                ValidateIssuer = true,
+                ValidateIssuerSigningKey = true
+            }, out SecurityToken validatedRefreshToken);
+
+            Guid userID = new Guid(employeeClaims.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value);
+
+            Claim[] claims = new Claim[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, userID.ToString())
+            };
+
+            return new RefreshReturn
+            {
+                AccessToken = GenerateToken(claims, accessTokenExpiry, accessTokenKey),
+                RefreshToken = GenerateToken(claims, refreshTokenExpiry, refreshTokenKey)
+            };
+        }
+
         private RegisterResult GetRegisterResult(RegisterReturn registerReturn)
         {
-            RegisterResult registerResult = new RegisterResult
+            RegisterResult registerResult = new()
             {
                 Status = (Models.Authentication.RegisterStatus)registerReturn.Status
             };
@@ -107,8 +137,8 @@ namespace ParkingManagement.WebClient.Api.Controllers
 
         private static Token GenerateToken(Claim[] claims, double expiryTime, SecurityKey securityKey)
         {
-            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-            SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
+            JwtSecurityTokenHandler tokenHandler = new();
+            SecurityTokenDescriptor tokenDescriptor = new()
             {
                 Issuer = tokenIssuer,
                 Audience = tokenAudience,

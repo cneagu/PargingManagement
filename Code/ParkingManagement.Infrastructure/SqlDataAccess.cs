@@ -10,10 +10,10 @@ namespace ParkingManagement.Infrastructure
     {
         public static object ExecuteScalar(string sqlQuery, string connectionString)
         {
-            using SqlConnection connection = new SqlConnection(connectionString);
+            using SqlConnection connection = new(connectionString);
             try
             {
-                using SqlCommand command = new SqlCommand();
+                using SqlCommand command = new();
                 command.Connection = connection;
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = sqlQuery;
@@ -37,12 +37,12 @@ namespace ParkingManagement.Infrastructure
 
         public static List<T> Read<T>(string sqlQuery, string connectionString)
         {
-            List<T> result = new List<T>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            List<T> result = new();
+            using (SqlConnection connection = new(connectionString))
             {
                 try
                 {
-                    using SqlCommand command = new SqlCommand();
+                    using SqlCommand command = new();
                     command.Connection = connection;
                     command.CommandType = System.Data.CommandType.Text;
                     command.CommandText = sqlQuery;
@@ -88,10 +88,10 @@ namespace ParkingManagement.Infrastructure
 
         public static void ExecuteNonQuery(string sqlQuery, string connectionString)
         {
-            using SqlConnection connection = new SqlConnection(connectionString);
+            using SqlConnection connection = new(connectionString);
             try
             {
-                using SqlCommand command = new SqlCommand();
+                using SqlCommand command = new();
                 command.Connection = connection;
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = sqlQuery;
@@ -116,10 +116,10 @@ namespace ParkingManagement.Infrastructure
         {
             string sqlQuery = CreateInsertQuery(obj, tableName);
 
-            using SqlConnection connection = new SqlConnection(connectionString);
+            using SqlConnection connection = new(connectionString);
             try
             {
-                using SqlCommand command = new SqlCommand();
+                using SqlCommand command = new();
                 command.Connection = connection;
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = sqlQuery;
@@ -144,10 +144,10 @@ namespace ParkingManagement.Infrastructure
         {
             string sqlQuery = CreateUpdateQuery(obj, where, tableName);
 
-            using SqlConnection connection = new SqlConnection(connectionString);
+            using SqlConnection connection = new(connectionString);
             try
             {
-                using SqlCommand command = new SqlCommand();
+                using SqlCommand command = new();
                 command.Connection = connection;
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = sqlQuery;
@@ -170,12 +170,12 @@ namespace ParkingManagement.Infrastructure
 
         public static List<T> ReadWithProcedure<T>(string storedProcedureName, string connectionString, SqlParameter[] parameters = default(SqlParameter[]))
         {
-            List<T> result = new List<T>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            List<T> result = new();
+            using (SqlConnection connection = new(connectionString))
             {
                 try
                 {
-                    using SqlCommand command = new SqlCommand();
+                    using SqlCommand command = new();
                     command.Connection = connection;
                     command.CommandText = storedProcedureName;
                     command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -222,10 +222,10 @@ namespace ParkingManagement.Infrastructure
 
         public static void ExecuteNonQueryWithProcedure(string storedProcedureName, string connectionString, SqlParameter[] parameters = default(SqlParameter[]))
         {
-            using SqlConnection connection = new SqlConnection(connectionString);
+            using SqlConnection connection = new(connectionString);
             try
             {
-                using SqlCommand command = new SqlCommand();
+                using SqlCommand command = new();
                 command.Connection = connection;
                 command.CommandText = storedProcedureName;
                 command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -249,7 +249,7 @@ namespace ParkingManagement.Infrastructure
 
         public static SqlParameter CreateSQLParameter(string name, object value)
         {
-            SqlParameter parameter = new SqlParameter();
+            SqlParameter parameter = new();
             parameter.ParameterName = name ?? throw new ArgumentNullException("name");
             parameter.Value = value ?? DBNull.Value;
             return parameter;
@@ -257,14 +257,14 @@ namespace ParkingManagement.Infrastructure
 
         public static List<SqlParameter> CreateSQLParameterList(object obj)
         {
-            List<SqlParameter> parameterList = new List<SqlParameter>();
+            List<SqlParameter> parameterList = new();
 
             Type type = obj.GetType();
             PropertyInfo[] properties = type.GetProperties();
 
             foreach (PropertyInfo prop in properties)
             {
-                SqlParameter parameter = new SqlParameter
+                SqlParameter parameter = new()
                 {
                     ParameterName = prop.Name,
                     Value = prop.GetValue(obj) ?? DBNull.Value
@@ -281,9 +281,9 @@ namespace ParkingManagement.Infrastructure
 
         private static string CreateInsertQuery(object obj, string tableName = null)
         {
-            StringBuilder query = new StringBuilder();
-            StringBuilder values = new StringBuilder();
-            StringBuilder propertie = new StringBuilder();
+            StringBuilder query = new();
+            StringBuilder values = new();
+            StringBuilder propertie = new();
             Type type = obj.GetType();
             query.AppendFormat("INSERT INTO [{0}]", tableName ?? type.Name);
             values.Append("VALUES(");
@@ -311,8 +311,8 @@ namespace ParkingManagement.Infrastructure
 
         private static string CreateUpdateQuery(object obj, string where, string tableName = null)
         {
-            StringBuilder query = new StringBuilder();
-            StringBuilder values = new StringBuilder();
+            StringBuilder query = new();
+            StringBuilder values = new();
 
             Type type = obj.GetType();
             query.AppendFormat("UPDATE [{0}]", tableName ?? type.Name);

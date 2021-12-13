@@ -1,0 +1,51 @@
+<mat-toolbar color="accent" class="menu">
+  <button mat-button color="secondary" (click)="back()">{{ 'back' | translate }}</button>
+</mat-toolbar>
+<h3 class="header">{{'parkingDashboardHeader' | translate}} {{headerText}}</h3>
+<div class="container">
+  <form #form="ngForm" (submit)="onSubmit()" class="dashboard-filter">
+    <mat-form-field color="accent" *ngIf="departments" class="department-field">
+      <mat-label>{{'department' | translate}}:</mat-label>
+      <mat-select [(value)]="currentDepartmentId">
+        <mat-option *ngFor="let department of departments" [value]="department.id">
+          {{department.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <input matInput
+             [matDatepickerFilter]="isWorkingDay"
+             [matDatepicker]="picker"
+             placeholder="Allocated parking spot in"
+             [max]="maxDate"
+             (dateChange)="onStartDateChange($event)"
+             [value]="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div class="button-filter">
+      <button mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="isDateInvalid"
+              class="submit">
+        {{ 'submitDate' | translate }}
+      </button>
+    </div>
+  </form>
+  <mat-form-field class="search-field">
+    <input matInput (keyup)="filterBy($event.target.value)" placeholder="Search for">
+  </mat-form-field>
+  <table mat-table [dataSource]="allocationResult" class="table-container mat-elevation-z8">
+    <ng-container matColumnDef="parkingSpotNumber">
+      <th mat-header-cell *matHeaderCellDef>{{ 'parkingSpotNumber' | translate }}</th>
+      <td mat-cell *matCellDef="let element"> {{element.parkingSpotNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="employeeName">
+      <th mat-header-cell *matHeaderCellDef class="align-right">{{ 'employeeName' | translate }}</th>
+      <td mat-cell *matCellDef="let element" class="align-right" [ngClass]="[element.employeeName == 'unallocated' ? 'unallocated' : '']"> {{element.employeeName}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
